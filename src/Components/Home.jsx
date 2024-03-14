@@ -1,9 +1,11 @@
-
+import Chats from "./Chats";
+import SideBar from "./SideBar";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello form home</h1>
+      <SideBar/>
+      <Chats/>
     </>
   )
 }
