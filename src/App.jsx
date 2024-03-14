@@ -1,22 +1,18 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './Components/Home'
-import NavBar from './Components/NavBar'
 
 function App() {
 
-
   return (
-    <>
+    <div className='w-full h-screen object-cover flex items-center bg-gray-300'>
     <BrowserRouter>
-    <NavBar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
     </Routes>
     </BrowserRouter>
       
-    </>
+    </div>
   )
 }
 
