@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { WavyBackground } from "../src/components/ui/wavy-background";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LoginForm } from "./components/main/LoginForm";
-import { SignupForm } from "./components/main/SignupForm";
+// import { SignupForm } from "./components/main/SignupForm";
 import { TypewriterEffectDemo } from "./components/main/TypewriterEffectSmooth";
+import SignupForm from "./components/main/SignupForm";
+
+// import { GoogleLogin } from "@react-oauth/google";
+// import { jwtDecode } from "jwt-decode";
 
 const router = createBrowserRouter([
   {
@@ -21,19 +27,35 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <WavyBackground className="max-w-4xl mx-auto p-auto">
-      <header className="flex start-10 py-8 fixed top-0 w-full ">
-        <a href="">
-          <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
-            Ripple
-          </span>
-          <span className="text-blue-500 sm:text-lg md:text-3xl lg:text-3xl font-bold text-center">
-            Room
-          </span>
-        </a>
-      </header>
-      <RouterProvider router={router} />
-    </WavyBackground>
+    <>
+      {/* <GoogleLogin
+        onSuccess={(credentialResponse) => {
+          if (typeof credentialResponse.credential === "string") {
+            const credentialResponseDecoded = jwtDecode(
+              credentialResponse.credential
+            );
+            // Now you can access the decoded JWT contents
+            console.log(credentialResponseDecoded);
+          }
+        }}
+        onError={() => {
+          console.log("Login Failed");
+        }}
+      /> */}
+      <WavyBackground className=" w-full mx-auto p-auto">
+        <div className="flex start-10 py-8 fixed top-0 w-full ">
+          <a href="/Signup">
+            <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
+              Ripple
+            </span>
+            <span className="text-blue-500 sm:text-lg md:text-3xl lg:text-3xl font-bold text-center">
+              Room
+            </span>
+          </a>
+        </div>
+        <RouterProvider router={router} />
+      </WavyBackground>
+    </>
   );
 }
 export default App;
