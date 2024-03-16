@@ -167,14 +167,14 @@ export default function SignupForm() {
             Sign up
             <BottomGradient />
           </button>
-          <div>
-            {value ? (
-              <Home />
-            ) : (
-              <button onClick={handleclick}>signin with google</button>
-            )}
-          </div>
         </form>
+        <div>
+          {value ? (
+            <Home />
+          ) : (
+            <button onClick={handleclick}>signin with google</button>
+          )}
+        </div>
       </div>
     </>
   );
