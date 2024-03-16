@@ -135,7 +135,7 @@ export default function SignupForm() {
               <Input
                 id="firstname"
                 placeholder="Password"
-                type="text"
+                type="password"
                 {...register("Password")}
               />
               <p className="text-red-500 text-md ">
@@ -149,7 +149,7 @@ export default function SignupForm() {
               <Input
                 id="firstname"
                 placeholder="user name"
-                type="text"
+                type="password"
                 {...register("cPassword")}
               />
               <p className="text-red-500 text-md ">
