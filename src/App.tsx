@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import { WavyBackground } from "../src/components/ui/wavy-background";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { LoginForm } from "./components/main/LoginForm";
+import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
-import { TypewriterEffectDemo } from "./components/main/TypewriterEffectSmooth";
-import SignupForm from "./components/main/SignupForm";
+import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
+import SignupForm from "./Components/main/SignupForm";
+import { WavyBackground } from "./Components/ui/wavy-background";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";

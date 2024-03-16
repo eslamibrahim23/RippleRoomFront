@@ -41,7 +41,7 @@ const BottomGradient = () => {
 
 const schema = yup
   .object({
-    firstName: yup.string().required().min(3),
+    userName: yup.string().required().min(3),
     Email: yup.string().required().email(),
     Password: yup
       .string()
@@ -68,7 +68,7 @@ export default function SignupForm() {
   });
   // const [userData, setUserData] = useState({});
   const navigate = useNavigate();
-  const onSubmit = async (user: any) => {
+  const onSubmit = async (user) => {
     console.log(user);
     const fetchuser = await axios.post(
       "https://rippleroomback.onrender.com/signup",
@@ -107,23 +107,21 @@ export default function SignupForm() {
         <form className="w-50 my-5" onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">User name</Label>
+              <Label htmlFor="userName">User name</Label>
               <Input
-                id="firstname"
+                id="userName"
                 placeholder="user name"
                 type="text"
-                {...register("firstName")}
+                {...register("userName")}
               />
-              <p className="text-red-500 text-md">
-                {errors.firstName?.message}
-              </p>
+              <p className="text-red-500 text-md">{errors.userName?.message}</p>
             </LabelInputContainer>
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">Email</Label>
+              <Label htmlFor="Email">Email</Label>
               <Input
-                id="firstname"
+                id="Email"
                 placeholder="Email"
                 type="text"
                 {...register("Email")}
