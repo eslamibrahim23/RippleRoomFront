@@ -10,3 +10,24 @@
         var(--blue-500),
         transparent 80%)
 }
+.sidebar-container{
+    @apply bg-white h-[99%] w-[13rem] rounded-lg ml-1 p-4
+    border transition-all duration-500 border-solid
+    border-gray-200 relative
+}
+.logo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: blue;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+.sidebar li a{
+    @apply flex items-center mt-2 p-4 mx-4 rounded-lg
+    cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300
+}
+.chats{
+    @apply bg-white h-[99%] w-[18rem] rounded-lg ml-1
+    border border-solid transition-all duration-500 relative
+}
