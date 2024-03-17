@@ -7,6 +7,7 @@ import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
 import SignupForm from "./Components/main/SignupForm";
+import EditProfile from './Components/main/EditProfile'
 import { WavyBackground } from "./Components/ui/wavy-background";
 
 // import { GoogleLogin } from "@react-oauth/google";
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupForm />,
+  },
+  {
+    path: "/profile/:id",
+    element: <EditProfile/>,
   },
 ]);
 function App() {
