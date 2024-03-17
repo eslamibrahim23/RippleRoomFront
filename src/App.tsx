@@ -7,6 +7,7 @@ import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
 import SignupForm from "./Components/main/SignupForm";
+import EditProfile from './Components/main/EditProfile'
 import { WavyBackground } from "./Components/ui/wavy-background";
 import Home from "./Components/main/Home";
 import Drawer from "./Components/main/Drawer";
@@ -29,13 +30,10 @@ const router = createBrowserRouter([
     element: <SignupForm />,
   },
   {
-    path: "/home",
-    element: <Home/>,
+
+    path: "/profile/:id",
+    element: <EditProfile/>,
   },
-  {
-    path: "/Msg",
-    element: <Drawer/>,
-  }
 
 
 ]);
