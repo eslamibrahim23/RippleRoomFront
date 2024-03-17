@@ -8,6 +8,9 @@ import { LoginForm } from "./Components/main/LoginForm";
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
 import SignupForm from "./Components/main/SignupForm";
 import { WavyBackground } from "./Components/ui/wavy-background";
+import Home from "./Components/main/Home";
+import Drawer from "./Components/main/Drawer";
+
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -25,6 +28,16 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignupForm />,
   },
+  {
+    path: "/home",
+    element: <Home/>,
+  },
+  {
+    path: "/Msg",
+    element: <Drawer/>,
+  }
+
+
 ]);
 function App() {
   return (
@@ -44,7 +57,7 @@ function App() {
         }}
       /> */}
       <WavyBackground className=" w-full mx-auto p-auto">
-        <div className="flex start-10 py-8 fixed top-0 w-full ">
+        {/* <div className="flex start-10 py-8 fixed top-0 w-full ">
           <a href="/Signup">
             <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
               Ripple
@@ -53,7 +66,7 @@ function App() {
               Room
             </span>
           </a>
-        </div>
+        </div> */}
         <RouterProvider router={router} />
       </WavyBackground>
     </>
