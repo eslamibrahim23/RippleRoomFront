@@ -11,47 +11,43 @@ function Drawer() {
 
   return (
     <>
-      {/* <input  className="drawer-toggle" /> */}
-      <div className="h-full bg-violet-600">
-        {/* <label
-          htmlFor="my-drawer-2"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label> */}
+      <div className="h-full  bg-violet-600">
         <ul className="menu p-4  min-h-full bg-gray-100 text-base-content rounded-r-2xl	">
           <div className="mt-10">
-            <span className="text-violet-900	  font-medium text-3xl mr-1">
+            <span className="text-violet-900	 font-medium text-2xl mr-1">
               Ripple
             </span>
             <span className="text-blue-500 font-medium text-2xl">Room</span>
           </div>
 
           <li className="text-lg font-medium text-violet-900 mb-5 mt-28  ">
-            <div className="flex justify-center items-center gap-4">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaHome className="text-[1.3rem] text-violet-900	" />
-              <Link to="/home">Home</Link>
+              <Link className="text-[1.3rem]" to="/home">Home</Link>
             </div>
           </li>
-          <li className="text-lg font-medium text-violet-900	 mb-5 ">
-            <Link to="/chat">
+          <li className="text-lg font-medium text-violet-900	mb-7">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <AiOutlineMessage className="text-[1.3rem]  text-violet-900	" />
-              Messages
-            </Link>
+              <Link to="/chat">Messages</Link>
+            </div>
           </li>
-          <li className="text-lg font-medium text-violet-900	 mb-5">
-            <Link to="/profile">
+          <li className="text-lg font-medium text-violet-900	 mb-7 ">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaUserEdit className="text-[1.3rem]  text-violet-900	" />
-              Edit Profile
-            </Link>
+              <Link to="/chat">Edit Profile</Link>
+            </div>
           </li>
-          <li className="text-lg font-medium text-violet-900	 mb-5">
-            <Link to="/alert">
+          <li className="text-lg font-medium text-violet-900	 mb-7 ">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaBell className="text-[1.3rem]  text-violet-900	" />
-              Notification
-            </Link>
+              <Link to="/chat">Notification</Link>
+            </div>
           </li>
+
           <li className="text-lg font-medium text-violet-900	 mt-44  ">
-            <div className="flex justify-center items-center">
+            <div className="bg-gray-400 via-neutral-300 dark:via-neutral-700 to-transparent my-6 h-[1px] w-52" />
+            <div className="flex justify-center items-center gap-3">
               <FaSignOutAlt className="text-[1.3rem]  text-violet-900	" />
               <span onClick={logout} className="cursor-pointer">
                 Sign OUT
