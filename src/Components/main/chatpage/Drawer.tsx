@@ -23,7 +23,9 @@ function Drawer() {
           <li className="text-lg font-medium text-violet-900 mb-5 mt-28  ">
             <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaHome className="text-[1.3rem] text-violet-900	" />
-              <Link className="text-[1.3rem]" to="/home">Home</Link>
+              <Link className="text-[1.3rem]" to="/ChatPage">
+                ChatPage
+              </Link>
             </div>
           </li>
           <li className="text-lg font-medium text-violet-900	mb-7">

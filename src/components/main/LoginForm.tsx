@@ -15,7 +15,7 @@ import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
 import { useEffect, useState } from "react";
-// import Home from "./Home";
+// import ChatPage from "./ChatPage";
 
 const LabelInputContainer = ({
   children,
@@ -69,7 +69,7 @@ export default function LoginForm() {
     );
 
     if (fetchuser) {
-      navigate("/Home");
+      navigate("/ChatPage");
     }
   };
 
@@ -87,7 +87,7 @@ export default function LoginForm() {
     setValue(localStorage.getItem("email"));
   });
   const navigatee = useNavigate();
-  if (value) navigatee("/Home");
+  if (value) navigatee("/ChatPage");
 
   return (
     <>

@@ -9,9 +9,13 @@ import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
 import SignupForm from "./Components/main/SignupForm";
 import { WavyBackground } from "./Components/ui/wavy--background";
 import ErrorPage from "./Components/main/ErrorPage";
-import Home from "./Components/main/Home";
 import LoginForm from "./Components/main/LoginForm";
-import Drawer from "./Components/main/Drawer";
+import ChatPage from "./Components/main/chatpage/ChatPage";
+import WelcomeScreen from "./Components/main/chatpage/WelcomeScreen";
+import MessagePage from "./Components/main/chatpage/MessagePage";
+import ChatBox from "./Components/main/chatpage/ChatBoxPage";
+import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
+import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -21,7 +25,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <TypewriterEffectDemo />,
     errorElement: <ErrorPage />,
-    children: [],
   },
   {
     path: "/login",
@@ -32,8 +35,20 @@ const router = createBrowserRouter([
     element: <SignupForm />,
   },
   {
-    path: "/Home",
-    element: <Home />,
+    path: "/ChatPage",
+    element: <ChatPage />,
+  },
+  {
+    path: "msg",
+    element: <MessagePage />,
+  },
+  {
+    path: "chatbox",
+    element: <ChatBoxPage />,
+  },
+  {
+    path: "editprofile",
+    element: <EditProfilePage />,
   },
 ]);
 function App() {

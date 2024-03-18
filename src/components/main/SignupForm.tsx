@@ -16,7 +16,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
 // import { useEffect, useState } from "react";
 // import { log } from "console";
-// import Home from "./Home";
+// import ChatPage from "./ChatPage";
 
 const LabelInputContainer = ({
   children,
@@ -93,7 +93,7 @@ export default function SignupForm() {
           { Email: data.user.email, userName: data.user.displayName }
         );
         console.log(fetchuser);
-        navigate("/Home");
+        navigate("/ChatPage");
       }
       tt()
     });
