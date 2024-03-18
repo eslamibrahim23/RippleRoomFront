@@ -22,7 +22,6 @@ export const theme = {
 export const plugins = [
   // rest of the code
   addVariablesForColors,
-  require("daisyui")
 ];
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
