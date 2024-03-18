@@ -31,19 +31,19 @@ function Drawer() {
           <li className="text-lg font-medium text-violet-900	mb-7">
             <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <AiOutlineMessage className="text-[1.3rem]  text-violet-900	" />
-              <Link to="/chat">Messages</Link>
+              <Link to="/msg">Messages</Link>
             </div>
           </li>
           <li className="text-lg font-medium text-violet-900	 mb-7 ">
             <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaUserEdit className="text-[1.3rem]  text-violet-900	" />
-              <Link to="/chat">Edit Profile</Link>
+              <Link to="/editprofile">Edit Profile</Link>
             </div>
           </li>
           <li className="text-lg font-medium text-violet-900	 mb-7 ">
             <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
               <FaBell className="text-[1.3rem]  text-violet-900	" />
-              <Link to="/chat">Notification</Link>
+              <Link to="/ChatPage">Notification</Link>
             </div>
           </li>
 
