@@ -2,6 +2,10 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { FaChatPage, FaCog, FaBell, FaSignOutAlt } from "react-icons/fa";
 
 function SideBar() {
+  const remove = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+  };
   return (
     <div className={`sidebar-container`}>
       <h1 className={`logo`}>RippleRoom</h1>
@@ -31,10 +35,10 @@ function SideBar() {
               <span className="pl-2">Settings</span>
             </a>
           </li>
-          <li className="mt-44">
+          <li className="mt-44" remove={remove}>
             <a href="/login">
               <FaSignOutAlt className="text-[1.3rem]" />
-              <span className="pl-2">SignOut</span>
+              <span className="pl-2">LogOut</span>
             </a>{" "}
           </li>
         </ul>

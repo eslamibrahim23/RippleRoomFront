@@ -6,7 +6,7 @@ function Drawer() {
   return (
     <div className="w-full flex">
       <div className="drawer lg:drawer-open  w-2/12 bg-violet-600">
-        <input  className="drawer-toggle" />
+        <input className="drawer-toggle" />
 
         <div className="drawer-side">
           <label
@@ -49,7 +49,7 @@ function Drawer() {
             <li className="text-lg font-medium text-violet-900	 mt-44  ">
               <Link to="/login">
                 <FaSignOutAlt className="text-[1.3rem]  text-violet-900	" />
-                Sign Out
+                Logout
               </Link>
             </li>
           </ul>

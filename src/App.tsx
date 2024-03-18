@@ -5,7 +5,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffect";
 import SignupForm from "./Components/main/SignupForm";
-import EditProfile from './Components/main/EditProfile'
+import EditProfile from "./Components/main/EditProfile";
 import { WavyBackground } from "./Components/ui/wavy-background";
 import ErrorPage from "./Components/main/ErrorPage";
 import LoginForm from "./Components/main/LoginForm";
@@ -13,7 +13,6 @@ import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
 import MessagePage from "./Components/main/chatpage/MessagePage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 import ChatPage from "./Components/main/chatpage/ChatPage";
-
 
 const router = createBrowserRouter([
   {
