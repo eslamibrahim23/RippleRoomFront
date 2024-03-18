@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 
 
-export function TypewriterEffectDemo() {
+export function TypewriterEffectSmooth() {
   const words = [
     {
       text: "Welcome",

@@ -5,17 +5,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
-import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectSmooth";
+
 import SignupForm from "./Components/main/SignupForm";
 import { WavyBackground } from "./Components/ui/wavy--background";
 import ErrorPage from "./Components/main/ErrorPage";
 import LoginForm from "./Components/main/LoginForm";
 import ChatPage from "./Components/main/chatpage/ChatPage";
-import WelcomeScreen from "./Components/main/chatpage/WelcomeScreen";
 import MessagePage from "./Components/main/chatpage/MessagePage";
-import ChatBox from "./Components/main/chatpage/ChatBoxPage";
 import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
+import {  TypewriterEffectSmooth } from "./Components/main/TypewriterEffect";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -23,7 +22,7 @@ import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <TypewriterEffectDemo />,
+    element: <TypewriterEffectSmooth />,
     errorElement: <ErrorPage />,
   },
   {
