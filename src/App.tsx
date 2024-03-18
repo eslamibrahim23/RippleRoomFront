@@ -3,22 +3,17 @@
 "use client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import { LoginForm } from "./Components/main/LoginForm";
-// import { SignupForm } from "./components/main/SignupForm";
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffect";
 import SignupForm from "./Components/main/SignupForm";
-import { WavyBackground } from "./Components/ui/wavy--background";
+import EditProfile from './Components/main/EditProfile'
+import { WavyBackground } from "./Components/ui/wavy-background";
 import ErrorPage from "./Components/main/ErrorPage";
 import LoginForm from "./Components/main/LoginForm";
-import ChatPage from "./Components/main/chatpage/ChatPage";
-import WelcomeScreen from "./Components/main/chatpage/WelcomeScreen";
-import MessagePage from "./Components/main/chatpage/MessagePage";
-import ChatBox from "./Components/main/chatpage/ChatBoxPage";
 import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
+import MessagePage from "./Components/main/chatpage/MessagePage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
+import ChatPage from "./Components/main/chatpage/ChatPage";
 
-// import { GoogleLogin } from "@react-oauth/google";
-// import { jwtDecode } from "jwt-decode";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +64,7 @@ function App() {
         }}
       /> */}
       <WavyBackground className=" w-full mx-auto p-auto">
-        {/* <div className="flex start-10 py-8 fixed top-0 w-full -z-10 ">
+        {/* <div className="flex start-10 py-8 fixed top-0 w-full ">
           <a href="/Signup">
             <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
               Ripple
