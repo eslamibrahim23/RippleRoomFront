@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 
 
-export function TypewriterEffectSmooth() {
+
+
+
+// import Drawer from "./Drawer";
+
+
+export function TypewriterEffectDemo() {
+
   const words = [
     {
       text: "Welcome",

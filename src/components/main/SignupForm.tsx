@@ -5,7 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 // import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate , Link} from "react-router-dom";
 import { cn } from "@/utils/cn";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 ("use client");
@@ -112,6 +113,16 @@ export default function SignupForm() {
 
   return (
     <>
+    <div className="flex start-10 py-8 fixed top-0 w-full ">
+          <Link to="/">
+            <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-4xl font-bold text-center mr-3">
+              Ripple
+            </span>
+            <span className="text-blue-500 sm:text-lg md:text-3xl lg:text-2xl font-bold text-center">
+              Room
+            </span>
+          </Link>
+        </div> 
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black  ">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Welcome to Ripple Room 😀

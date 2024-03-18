@@ -14,7 +14,8 @@ import ChatPage from "./Components/main/chatpage/ChatPage";
 import MessagePage from "./Components/main/chatpage/MessagePage";
 import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
-import {  TypewriterEffectSmooth } from "./Components/main/TypewriterEffect";
+
+import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -22,7 +23,7 @@ import {  TypewriterEffectSmooth } from "./Components/main/TypewriterEffect";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <TypewriterEffectSmooth />,
+    element: <TypewriterEffectDemo />,
     errorElement: <ErrorPage />,
   },
   {
