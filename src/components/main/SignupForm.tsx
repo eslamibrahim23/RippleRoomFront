@@ -14,8 +14,9 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
-import { useEffect, useState } from "react";
-import Home from "./Home";
+// import { useEffect, useState } from "react";
+// import { log } from "console";
+// import ChatPage from "./ChatPage";
 
 const LabelInputContainer = ({
   children,
@@ -74,31 +75,46 @@ export default function SignupForm() {
       "https://rippleroomback.onrender.com/signup",
       { ...user }
     );
-
-    if (fetchuser.data.status === "success") {
-      console.log("yes");
+    if (fetchuser) {
       navigate("/Login");
     }
   };
 
   // const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState({});
   const handleclick = () => {
     signInWithPopup(auth, provider).then((data) => {
       console.log(data);
-      setValue(data.user.email);
+      // setValue({ Email: data.user.email, userName: data.user.displayName });
       localStorage.setItem("email", data.user.email);
+      const tt=async()=>{
+        const fetchuser = axios.post(
+          "https://rippleroomback.onrender.com/signup",
+          { Email: data.user.email, userName: data.user.displayName }
+        );
+        console.log(fetchuser);
+        navigate("/ChatPage");
+      }
+      tt()
     });
   };
 
-  useEffect(() => {
-    setValue(localStorage.getItem("email"));
-  });
+  // useEffect(() => {
+  //   setValue(localStorage.getItem("email"));
+  // });
+  // if (value) {
+
+  //   console.log(value);
+  //    const tt = async()=>{
+
+  //   tt()
+  // }
+
   return (
     <>
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black  ">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Welcome to Ripple Room
+          Welcome to Ripple Room 😀
         </h2>
         <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
           Sign up to ripple to enjoy chatting with friends
@@ -131,9 +147,9 @@ export default function SignupForm() {
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">Password</Label>
+              <Label htmlFor="Password">Password</Label>
               <Input
-                id="firstname"
+                id="Password"
                 placeholder="Password"
                 type="password"
                 {...register("Password")}
@@ -145,9 +161,9 @@ export default function SignupForm() {
           </div>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
-              <Label htmlFor="firstname">Confirm Password</Label>
+              <Label htmlFor="cPassword">Confirm Password</Label>
               <Input
-                id="firstname"
+                id="cPassword"
                 placeholder="user name"
                 type="password"
                 {...register("cPassword")}
@@ -166,12 +182,31 @@ export default function SignupForm() {
             <BottomGradient />
           </button>
         </form>
-        <div>
-          {value ? (
-            <Home />
-          ) : (
-            <button onClick={handleclick}>signin with google</button>
-          )}
+
+        <div className="flex flex-row items-center space-y-2 md:space-y-0 md:space-x-2 mb-2 w-full">
+          <div className="bg-gray-200 via-neutral-300 dark:via-neutral-700 to-transparent my-6 h-[1px] w-32" />
+          <p className="text-neutral-600 text-xs max-w-sm  dark:text-neutral-300 text-center">
+            OR CONTINUE WITH
+          </p>
+          <div className="bg-gray-200 via-neutral-300 dark:via-neutral-700 to-transparent h-[1px] w-32" />
+        </div>
+
+        <div
+          className="
+        justify-center
+        items-center
+        flex bg-gradient-to-br relative group/btn from-sky-500 dark:from-zinc-900 dark:to-zinc-900 to-neutral-400 block dark:bg-zinc-800 w-full  rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+        >
+          <div className="">
+            <img
+              className="w-8 h-8 mx-auto"
+              src="src/assets/images/google-svgrepo-com.svg"
+              alt=""
+            />
+          </div>
+          <button onClick={handleclick} className="text-2xl" type="submit">
+            oogle
+          </button>
         </div>
       </div>
     </>

@@ -4,7 +4,7 @@
 
 
 
-.editInput{
+/* .editInput{
     background: radial-gradient(
         0px circle at 109.60000610351562px 28.399993896484375px,
         var(--blue-500),
@@ -30,4 +30,4 @@
 .chats{
     @apply bg-white h-[99%] w-[18rem] rounded-lg ml-1
     border border-solid transition-all duration-500 relative
-}
+} */

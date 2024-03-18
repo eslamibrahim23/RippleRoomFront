@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 
+
 export function TypewriterEffectDemo() {
   const words = [
     {
@@ -20,6 +21,9 @@ export function TypewriterEffectDemo() {
     },
   ];
   return (
+    <>
+      {/* <Drawer /> */}
+    
     <div className="flex flex-col items-center justify-center h-[40rem] ">
       <p className="text-neutral-900 dark:text-neutral-200 text-base  mb-10">
         You must be the change you wish to see in the world.
@@ -38,5 +42,6 @@ export function TypewriterEffectDemo() {
         </Link>
       </div>
     </div>
+    </>
   );
 }
