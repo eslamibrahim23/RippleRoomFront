@@ -54,16 +54,6 @@ function App() {
         }}
       /> */}
       <WavyBackground className=" w-full mx-auto p-auto">
-        {/* <div className="flex start-10 py-8 fixed top-0 w-full -z-10 ">
-          <a href="/Signup">
-            <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
-              Ripple
-            </span>
-            <span className="text-blue-500 sm:text-lg md:text-3xl lg:text-3xl font-bold text-center">
-              Room
-            </span>
-          </a>
-        </div> */}
         <RouterProvider router={router} />
       </WavyBackground>
     </>

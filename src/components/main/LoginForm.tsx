@@ -15,6 +15,7 @@ import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 // import Home from "./Home";
 
 const LabelInputContainer = ({
@@ -25,9 +26,12 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
+    <>
+      <Logo />
+      <div className={cn("flex flex-col space-y-2 w-full", className)}>
+        {children}
+      </div>
+    </>
   );
 };
 const BottomGradient = () => {
