@@ -15,6 +15,9 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import Logo from "./Logo";
 // import { useEffect, useState } from "react";
 // import { log } from "console";
 // import ChatPage from "./ChatPage";
@@ -27,9 +30,12 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
+    <>
+      <Logo />
+      <div className={cn("flex flex-col space-y-2 w-full", className)}>
+        {children}
+      </div>
+    </>
   );
 };
 const BottomGradient = () => {
@@ -88,15 +94,15 @@ export default function SignupForm() {
       console.log(data);
       // setValue({ Email: data.user.email, userName: data.user.displayName });
       localStorage.setItem("email", data.user.email);
-      const tt=async()=>{
+      const tt = async () => {
         const fetchuser = axios.post(
           "https://rippleroomback.onrender.com/signup",
           { Email: data.user.email, userName: data.user.displayName }
         );
         console.log(fetchuser);
-        navigate("/ChatPage");
-      }
-      tt()
+        navigate("/Home");
+      };
+      tt();
     });
   };
 
@@ -209,10 +215,9 @@ export default function SignupForm() {
         flex bg-gradient-to-br relative group/btn from-sky-500 dark:from-zinc-900 dark:to-zinc-900 to-neutral-400 block dark:bg-zinc-800 w-full  rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
         >
           <div className="">
-            <img
-              className="w-8 h-8 mx-auto"
-              src="src/assets/images/google-svgrepo-com.svg"
-              alt=""
+            <FontAwesomeIcon
+              icon={faGoogle}
+              style={{ fontSize: "30px", color: "rgb(168, 85, 247, 0)" }}
             />
           </div>
           <button onClick={handleclick} className="text-2xl" type="submit">
