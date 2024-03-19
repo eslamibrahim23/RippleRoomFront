@@ -13,6 +13,8 @@ import { cn } from "@/utils/cn";
 ("use client");
 
 import { Label } from "../ui/label";
+// import {Link} from "react-router-dom"
+
 import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
@@ -29,11 +31,10 @@ const LabelInputContainer = ({
 }) => {
   return (
     <>
- 
       <Logo />
       <div className={cn("flex flex-col space-y-2 w-full", className)}>
         {children}
-      </div>
+      </div>{" "}
     </>
   );
 };
@@ -221,4 +222,3 @@ export default function LoginForm() {
     </>
   );
 }
-
