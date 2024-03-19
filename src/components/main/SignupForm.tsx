@@ -100,7 +100,7 @@ export default function SignupForm() {
           { Email: data.user.email, userName: data.user.displayName }
         );
         console.log(fetchuser);
-        navigate("/Home");
+        navigate("/chatpage");
       };
       tt();
     });

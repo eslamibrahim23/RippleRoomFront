@@ -2,10 +2,8 @@
 
 // import { Link } from "react-router-dom";
 import Chat from "./Chat";
-import Drawer from "./Drawer";
+import Drawer from "../Drawer";
 import Users from "./Users";
-
-
 
 function ChatBoxPage() {
   return (
@@ -18,7 +16,7 @@ function ChatBoxPage() {
           <Users />
         </div>
         <div className=" w-6/12 flex items-center justify-center gap-10">
-          <Chat/>
+          <Chat />
         </div>
       </div>
     </>

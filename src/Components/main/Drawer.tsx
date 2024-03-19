@@ -1,63 +1,64 @@
 import { FaHome, FaBell, FaSignOutAlt, FaUserEdit } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Drawer() {
+  const navigatee = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("email");
+    navigatee("/");
+  };
+
   return (
-    <div className="w-full flex">
-      <div className="drawer lg:drawer-open  w-2/12 bg-violet-600">
-        <input  className="drawer-toggle" />
+    <>
+      <div className="h-full bg-violet-900 ">
+        <ul className="p-1 h-full menu  bg-gray-100 text-base-content rounded-r-3xl	">
+          <div className="mb-36">
+            <span className="text-violet-900	 font-medium text-2xl ">
+              Ripple
+            </span>
+            <span className="text-blue-500 font-medium text-2xl">Room</span>
+          </div>
 
-        <div className="drawer-side">
-          <label
-            htmlFor="my-drawer-2"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
-          <ul className="menu p-4   min-h-full bg-gray-100 text-base-content rounded-r-2xl	">
-            <div className="mt-10">
-              <span className="text-violet-900	  font-medium text-3xl mr-1">
-                Ripple
-              </span>
-              <span className="text-blue-500 font-medium text-2xl">Room</span>
+          <li className="mt-5 text-lg font-medium text-violet-900   ">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
+              <FaHome className="text-[1.3rem] text-violet-900	" />
+              <Link className="text-[1.3rem]" to="/ChatPage">
+                ChatPage
+              </Link>
             </div>
+          </li>
+          <li className="mt-5 text-lg font-medium text-violet-900	">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
+              <AiOutlineMessage className="text-[1.3rem]  text-violet-900	" />
+              <Link to="/msg">Messages</Link>
+            </div>
+          </li>
+          <li className="mt-5 text-lg font-medium text-violet-900	  ">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
+              <FaUserEdit className="text-[1.3rem]  text-violet-900	" />
+              <Link to="/profile">Profile</Link>
+            </div>
+          </li>
+          <li className="mt-5 mb-60 text-lg font-medium text-violet-900	 ">
+            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
+              <FaBell className="text-[1.3rem]  text-violet-900	" />
+              <Link to="/ChatPage">Notification</Link>
+            </div>
+          </li>
 
-            <li className="text-lg font-medium text-violet-900	 mb-5 mt-28 ">
-              <Link to="/home">
-                <FaHome className="text-[1.3rem] text-violet-900	" />
-                Home
-              </Link>
-            </li>
-            <li className="text-lg font-medium text-violet-900	 mb-5 ">
-              <Link to="/chat">
-                <AiOutlineMessage className="text-[1.3rem]  text-violet-900	" />
-                Messages
-              </Link>
-            </li>
-            <li className="text-lg font-medium text-violet-900	 mb-5">
-              <Link to="/profile">
-                <FaUserEdit className="text-[1.3rem]  text-violet-900	" />
-                Edit Profile
-              </Link>
-            </li>
-            <li className="text-lg font-medium text-violet-900	 mb-5">
-              <Link to="/alert">
-                <FaBell className="text-[1.3rem]  text-violet-900	" />
-                Notification
-              </Link>
-            </li>
-            <li className="text-lg font-medium text-violet-900	 mt-44  ">
-              <Link to="/login">
-                <FaSignOutAlt className="text-[1.3rem]  text-violet-900	" />
-                Sign Out
-              </Link>
-            </li>
-          </ul>
-        </div>
+          <li className="text-lg font-medium text-violet-900	 ">
+            <div className="bg-gray-400 via-neutral-300 dark:via-neutral-700 to-transparent my-6 h-[1px] w-56" />
+            <div className="flex justify-center items-center gap-3">
+              <FaSignOutAlt className="text-[1.3rem]  text-violet-900	" />
+              <span onClick={logout} className="cursor-pointer">
+                Sign OUT
+              </span>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div className=" w-4/12 bg-red-500 ">hakhflafl</div>
-      <div className=" w-6/12 bg-violet-600 ">hakhflafl</div>
-    </div>
+    </>
   );
 }
 

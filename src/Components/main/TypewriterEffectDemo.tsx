@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import Logo from "./Logo";
 
-
-
-
 // import Drawer from "./Drawer";
 
-
 export function TypewriterEffectDemo() {
-
   const words = [
     {
       text: "Welcome",
@@ -33,7 +28,7 @@ export function TypewriterEffectDemo() {
       <Link to="/login" style={{ cursor: "pointer" }}>
         <Logo />
       </Link>
-      <div className="flex flex-col items-center justify-center h-[40rem] ">
+      <div className="flex flex-col items-center justify-center h-full ">
         <p className="text-neutral-900 dark:text-neutral-200 text-base  mb-10">
           You must be the change you wish to see in the world.
         </p>

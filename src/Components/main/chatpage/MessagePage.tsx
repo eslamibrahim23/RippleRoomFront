@@ -1,10 +1,9 @@
 // import React from 'react'
 
 // import { Link } from "react-router-dom";
-import Drawer from "./Drawer";
+import Drawer from "../Drawer";
 import Users from "./Users";
 import WelcomeMessageScreen from "./WelcomeMessageScreen";
-
 
 function MessagePage() {
   return (

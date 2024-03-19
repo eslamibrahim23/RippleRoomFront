@@ -16,6 +16,7 @@ import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
+import Profile from "./Components/main/profile/Profile";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -47,28 +48,18 @@ const router = createBrowserRouter([
     element: <ChatBoxPage />,
   },
   {
+    path: "profile",
+    element: <Profile />,
+  },
+  {
     path: "editprofile",
-    element: <EditProfilePage />,
+    element: <EditProfilePage/>,
   },
 ]);
 function App() {
   return (
     <>
-      {/* <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          if (typeof credentialResponse.credential === "string") {
-            const credentialResponseDecoded = jwtDecode(
-              credentialResponse.credential
-            );
-            // Now you can access the decoded JWT contents
-            console.log(credentialResponseDecoded);
-          }
-        }}
-        onError={() => {
-          console.log("Login Failed");
-        }}
-      /> */}
-      <WavyBackground className=" w-full mx-auto p-auto">
+      <WavyBackground className="w-full mx-auto p-auto">
         <RouterProvider router={router} />
       </WavyBackground>
     </>

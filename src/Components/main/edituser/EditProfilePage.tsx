@@ -1,5 +1,5 @@
 import React from "react";
-import Drawer from "../chatpage/Drawer";
+import Drawer from "../Drawer";
 import EditProfile from "./EditProfile";
 
 function EditProfilePage() {
