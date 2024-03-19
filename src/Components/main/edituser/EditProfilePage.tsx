@@ -9,7 +9,7 @@ function EditProfilePage() {
         <div className="w-2/12">
           <Drawer />
         </div>
-        <div className="h-screen w-10/12 flex items-center justify-center gap-10">
+        <div className=" w-10/12 flex items-center justify-center gap-10">
           <EditProfile />
         </div>
       </div>

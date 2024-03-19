@@ -15,7 +15,22 @@ function Users() {
     };
     fetchAllUsers();
   }, []);
-  console.log(user);
+
+
+  // const [search, setSearch] = useState("");
+  const [data, setData] = useState({
+    search: "",
+  });
+
+  const onChaneHandler = (e) => {
+    const newData = { ...data };
+    newData[e.target.name] = e.target.value;
+    setData(newData);
+  };
+
+  const searched = user.filter((u) =>
+    u.userName.toLowerCase().includes(`${data.search.toLowerCase()}`)
+  );
 
   return (
     <>
@@ -24,17 +39,19 @@ function Users() {
           <h1 className="w-12/12 mx-auto text-white text-4xl">Messages</h1>
           <div className="w-11/12 mt-5 mx-auto">
             <input
-              className="w-full mx-auto  py-2 rounded border-none focus:outline-violet-800 outline-offset-1"
+              value={data.search}
+              onChange={onChaneHandler}
+              className="w-full mx-auto  p-2 rounded border-none focus:outline-violet-800 outline-offset-1"
               type="text"
-              name=""
-              id=""
+              name="search"
+              id="search"
               placeholder="Search here ..."
             />
           </div>
 
           <div className="mt-5 h-5/6 overflow-auto">
-            {user
-              ? user.map((u, i) => {
+            {searched
+              ? searched.map((u, i) => {
                   return (
                     <div key={i}>
                       <UserDetails user={u} />

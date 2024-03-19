@@ -2,10 +2,7 @@ import React from "react";
 // import i from "../../../assets/images/R.png";
 
 function UserDetails(props) {
-  console.log(props);
   const { user } = props;
-  console.log(user.Image);
-
   return (
     <>
       <div className="container mt-5">

@@ -3,8 +3,6 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 // import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +11,6 @@ import { cn } from "@/utils/cn";
 ("use client");
 
 import { Label } from "../ui/label";
-// import {Link} from "react-router-dom"
-
 import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
@@ -34,7 +30,7 @@ const LabelInputContainer = ({
       <Logo />
       <div className={cn("flex flex-col space-y-2 w-full", className)}>
         {children}
-      </div>{" "}
+      </div>
     </>
   );
 };
@@ -69,38 +65,15 @@ export default function LoginForm() {
   });
   // const [userData, setUserData] = useState({});
   const navigate = useNavigate();
-  // const onSubmit = async (user) => {
-  //   console.log(user);
-  //   const fetchuser = await axios.post(
-  //     "https://rippleroomback.onrender.com/login",
-  //     { ...user }
-
-  //   );
-
-  //   if (fetchuser) {
-
-  //     navigate("/ChatPage");
-  //   }
-  // };
   const onSubmit = async (user) => {
-    try {
-      const response = await axios.post(
-        "https://rippleroomback.onrender.com/login",
-        { ...user }
-      );
+    console.log(user);
+    const fetchuser = await axios.post(
+      "https://rippleroomback.onrender.com/login",
+      { ...user }
+    );
 
-      if (response.data.token && response.data.user) {
-        localStorage.setItem("token", response.data.token);
-        const userId = response.data.user._id;
-        localStorage.setItem("userId", userId);
-        navigate("/ChatPage");
-      } else {
-        // Handle error if token or userId is missing
-        console.error("Token or userId is missing in response");
-      }
-    } catch (error) {
-      // Handle error if login request fails
-      console.error("Login request failed:", error);
+    if (fetchuser) {
+      navigate("/ChatPage");
     }
   };
 
@@ -111,14 +84,11 @@ export default function LoginForm() {
       console.log(data);
       setValue(data.user.email);
       localStorage.setItem("email", data.user.email);
-      console.log(data);
     });
   };
 
   useEffect(() => {
     setValue(localStorage.getItem("email"));
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
   });
   const navigatee = useNavigate();
   if (value) navigatee("/ChatPage");
@@ -180,29 +150,6 @@ export default function LoginForm() {
 
         <div
           className="
-  justify-center
-  items-center
-  flex bg-gradient-to-br relative group/btn white-500 dark:from-zinc-900 dark:to-zinc-900 to-neutral-400 block dark:bg-zinc-800 w-full  rounded-md h-10 font-medium 
-  shadow-md text-blue-500 dark:text-blue-500
-  "
-        >
-          <div className="flex items-center">
-            <FontAwesomeIcon
-              className="text-purple-500"
-              icon={faGoogle}
-              style={{ fontSize: "35px" }}
-            />
-            <button
-              onClick={handleclick}
-              className="text-2xl text-blue-500 ml-2"
-              type="submit"
-            >
-              oogle
-            </button>
-          </div>
-        </div>
-        {/* <div
-          className="
         justify-center
         items-center
         flex bg-gradient-to-br relative group/btn from-sky-500 dark:from-zinc-900 dark:to-zinc-900 to-neutral-400 block dark:bg-zinc-800 w-full  rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
@@ -217,7 +164,7 @@ export default function LoginForm() {
           <button onClick={handleclick} className="text-2xl" type="submit">
             oogle
           </button>
-        </div> */}
+        </div>
       </div>
     </>
   );
