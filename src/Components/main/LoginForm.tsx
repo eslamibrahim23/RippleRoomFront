@@ -65,19 +65,36 @@ export default function LoginForm() {
   });
   // const [userData, setUserData] = useState({});
   const navigate = useNavigate();
-  const onSubmit = async (user) => {
-    console.log(user);
-    const fetchuser = await axios.post(
-      "https://rippleroomback.onrender.com/login",
-      { ...user }
-    );
 
-    if (fetchuser) {
-      navigate("/ChatPage");
+  const onSubmit = async (user) => {
+    try {
+      const response = await axios.post(
+        "https://rippleroomback.onrender.com/login",
+        { ...user }
+      );
+
+      if (response.data.token && response.data.user) {
+        localStorage.setItem("token", response.data.token);
+        const userId = response.data.user._id;
+        localStorage.setItem("userId", userId);
+        navigate("/ChatPage");
+      } else {
+        // Handle error if token or userId is missing
+        console.error("Token or userId is missing in response");
+      }
+    } catch (error) {
+      // Handle error if login request fails
+      console.error("Login request failed:", error);
     }
   };
 
-  // const [loading, setLoading] = useState(false);
+
+
+
+
+
+
+//google
   const [value, setValue] = useState("");
   const handleclick = () => {
     signInWithPopup(auth, provider).then((data) => {
@@ -85,8 +102,7 @@ export default function LoginForm() {
       setValue(data.user.email);
       localStorage.setItem("email", data.user.email);
     });
-  };
-
+  }; 
   useEffect(() => {
     setValue(localStorage.getItem("email"));
   });
