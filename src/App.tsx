@@ -3,17 +3,23 @@
 "use client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { TypewriterEffectDemo } from "./Components/main/TypewriterEffect";
+// import { LoginForm } from "./Components/main/LoginForm";
+// import { SignupForm } from "./components/main/SignupForm";
+
 import SignupForm from "./Components/main/SignupForm";
-import EditProfile from './Components/main/EditProfile'
-import { WavyBackground } from "./Components/ui/wavy-background";
+import { WavyBackground } from "./Components/ui/wavy--background";
 import ErrorPage from "./Components/main/ErrorPage";
 import LoginForm from "./Components/main/LoginForm";
-import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
-import MessagePage from "./Components/main/chatpage/MessagePage";
-import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 import ChatPage from "./Components/main/chatpage/ChatPage";
+import MessagePage from "./Components/main/chatpage/MessagePage";
+import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
+import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 
+import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
+import Profile from "./Components/main/profile/Profile";
+
+// import { GoogleLogin } from "@react-oauth/google";
+// import { jwtDecode } from "jwt-decode";
 
 const router = createBrowserRouter([
   {
@@ -42,38 +48,18 @@ const router = createBrowserRouter([
     element: <ChatBoxPage />,
   },
   {
+    path: "profile",
+    element: <Profile />,
+  },
+  {
     path: "editprofile",
-    element: <EditProfilePage />,
+    element: <EditProfilePage/>,
   },
 ]);
 function App() {
   return (
     <>
-      {/* <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          if (typeof credentialResponse.credential === "string") {
-            const credentialResponseDecoded = jwtDecode(
-              credentialResponse.credential
-            );
-            // Now you can access the decoded JWT contents
-            console.log(credentialResponseDecoded);
-          }
-        }}
-        onError={() => {
-          console.log("Login Failed");
-        }}
-      /> */}
-      <WavyBackground className=" w-full mx-auto p-auto">
-        {/* <div className="flex start-10 py-8 fixed top-0 w-full ">
-          <a href="/Signup">
-            <span className="text-purple-500 sm:text-xl md:text-3xl lg:text-5xl font-bold text-center mr-3">
-              Ripple
-            </span>
-            <span className="text-blue-500 sm:text-lg md:text-3xl lg:text-3xl font-bold text-center">
-              Room
-            </span>
-          </a>
-        </div> */}
+      <WavyBackground className="w-full mx-auto p-auto">
         <RouterProvider router={router} />
       </WavyBackground>
     </>

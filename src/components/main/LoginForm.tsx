@@ -11,12 +11,11 @@ import { cn } from "@/utils/cn";
 ("use client");
 
 import { Label } from "../ui/label";
-// import {Link} from "react-router-dom"
-
 import { Input } from "../ui/input";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../googleSign/firebaseConfig";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 // import ChatPage from "./ChatPage";
 
 const LabelInputContainer = ({
@@ -27,9 +26,12 @@ const LabelInputContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
+    <>
+      <Logo />
+      <div className={cn("flex flex-col space-y-2 w-full", className)}>
+        {children}
+      </div>
+    </>
   );
 };
 const BottomGradient = () => {
@@ -167,3 +169,4 @@ export default function LoginForm() {
     </>
   );
 }
+

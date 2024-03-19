@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect,useState} from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { cn } from "@/utils/cn";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "../ui/input";
-import profile from "../../R.png";
+import profile from "../../assets/images/R.png";
 import { Link } from "react-router-dom";
 
 const LabelInputContainer = ({
@@ -51,7 +52,6 @@ const EditProfile: React.FC = () => {
     if (avatar) {
       formDataToSend.append("image", avatar);
     }
-
     axios
       .patch(
         "https://rippleroomback.onrender.com/user/editprofile/:id",
