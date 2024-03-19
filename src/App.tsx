@@ -6,10 +6,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
 
-import SignupForm from "./Components/main/SignupForm";
+
 import { WavyBackground } from "./Components/ui/wavy--background";
 import ErrorPage from "./Components/main/ErrorPage";
-import LoginForm from "./Components/main/LoginForm";
+
 import ChatPage from "./Components/main/chatpage/ChatPage";
 import MessagePage from "./Components/main/chatpage/MessagePage";
 import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
@@ -17,6 +17,8 @@ import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
 import Profile from "./Components/main/profile/Profile";
+import LoginForm from "./Components/main/LoginForm";
+import SignupForm from "./Components/main/SignupFrom";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
