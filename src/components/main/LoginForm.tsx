@@ -162,7 +162,7 @@ export default function LoginForm() {
             />
           </div>
           <button onClick={handleclick} className="text-2xl" type="submit">
-            oogle
+            Google
           </button>
         </div>
       </div>
