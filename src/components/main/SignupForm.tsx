@@ -94,15 +94,15 @@ export default function SignupForm() {
       console.log(data);
       // setValue({ Email: data.user.email, userName: data.user.displayName });
       localStorage.setItem("email", data.user.email);
-      const tt=async()=>{
+      const tt = async () => {
         const fetchuser = axios.post(
           "https://rippleroomback.onrender.com/signup",
           { Email: data.user.email, userName: data.user.displayName }
         );
         console.log(fetchuser);
-        navigate("/ChatPage");
-      }
-      tt()
+        navigate("/chatpage");
+      };
+      tt();
     });
   };
 
