@@ -11,9 +11,9 @@ function MessagePage() {
   const [b, setb] = useState(true);
   //   setb('true');
   // console.log(b);
-setTimeout(()=>{
-setb(false)
-},2000)
+  setTimeout(() => {
+    setb(false);
+  }, 2000);
   return (
     <>
       <div className="h-screen w-full flex ">

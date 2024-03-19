@@ -80,68 +80,95 @@ const EditProfile: React.FC = () => {
     console.log(data);
   };
 
-  return(
+  return (
     <>
-    <form className="grid grid-cols-1 md:grid-cols-2 gap-5 items-end w-[90%] mx-auto" onSubmit={handleSubmit(onSubmit)}>
-    <div className="text-center col-span-1 mx-10 md:block">
-        <div className="image mx-auto">
-        <img
-             src={
-               imageUrl
-                 ? `https://rippleroomback.onrender.com/${imageUrl}`
-                 : profile
-             }
-             alt="Profile"
-             className="w-72 h-72 rounded-full cursor-pointer"
-             onClick={() => document.getElementById("imageInput").click()}
-           />
-           {/* File input */}
-           <input
-             type="file"
-             id="imageInput"
-             style={{ display: "none" }}
-             onChange={(e) => handleAvatarChange(e)}
-           />
+      <form
+        className="grid grid-cols-1 md:grid-cols-2 gap-5 items-end w-[90%] mx-auto"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="text-center col-span-1 mx-10 md:block">
+          <div className="image mx-auto">
+            <img
+              src={
+                imageUrl
+                  ? `https://rippleroomback.onrender.com/${imageUrl}`
+                  : profile
+              }
+              alt="Profile"
+              className="w-72 h-72 rounded-full cursor-pointer"
+              onClick={() => document.getElementById("imageInput").click()}
+            />
+            {/* File input */}
+            <input
+              type="file"
+              id="imageInput"
+              style={{ display: "none" }}
+              onChange={(e) => handleAvatarChange(e)}
+            />
+          </div>
         </div>
-      </div>
-      <div className="col-span-1 ">
-       
-        <LabelInputContainer>
-        <Label htmlFor="email">Email</Label>
-          <Input type="text" id="email" {...register("Email")} className="py-6" placeholder="Email"/>
+        <div className="col-span-1 ">
+          <LabelInputContainer>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              type="text"
+              id="email"
+              {...register("Email")}
+              className="py-6"
+              placeholder="Email"
+            />
           </LabelInputContainer>
-        
-      </div>
-      <div className="col-span-1">
-        <LabelInputContainer>
-        <Label htmlFor="yourname">Your Name</Label>
-          <Input type="text" id="yourname" {...register("userName")} className="py-6" placeholder="userName"/>
+        </div>
+        <div className="col-span-1">
+          <LabelInputContainer>
+            <Label htmlFor="yourname">Your Name</Label>
+            <Input
+              type="text"
+              id="yourname"
+              {...register("userName")}
+              className="py-6"
+              placeholder="userName"
+            />
           </LabelInputContainer>
-      </div>
-      
-      
-      <div className="col-span-1">
-        <LabelInputContainer>
-        <Label htmlFor="phone">Phone</Label>
-          <Input type="text" id="phone" {...register("Phone")} className="py-6" placeholder="Phone"/>
+        </div>
+
+        <div className="col-span-1">
+          <LabelInputContainer>
+            <Label htmlFor="phone">Phone</Label>
+            <Input
+              type="text"
+              id="phone"
+              {...register("Phone")}
+              className="py-6"
+              placeholder="Phone"
+            />
           </LabelInputContainer>
-        
-      </div>
-      <div className="col-span-1">
-        <LabelInputContainer>
-        <Label htmlFor="bio">Bio</Label>
-          <Input type="text" id="bio" {...register("Bio")} className="py-6" placeholder="Bio"/>
+        </div>
+        <div className="col-span-1">
+          <LabelInputContainer>
+            <Label htmlFor="bio">Bio</Label>
+            <Input
+              type="text"
+              id="bio"
+              {...register("Bio")}
+              className="py-6"
+              placeholder="Bio"
+            />
           </LabelInputContainer>
-      </div>
-      <div className="col-span-1">
-       
-        <LabelInputContainer>
-        <Label htmlFor="address">Address</Label>
-          <Input type="text" id="address" {...register("Address")} className="py-6" placeholder="Address"/>
+        </div>
+        <div className="col-span-1">
+          <LabelInputContainer>
+            <Label htmlFor="address">Address</Label>
+            <Input
+              type="text"
+              id="address"
+              {...register("Address")}
+              className="py-6"
+              placeholder="Address"
+            />
           </LabelInputContainer>
-        
-      </div>
-      <div className="flex justify-between items-center mt-10 mx-44">
+        </div>
+        <div className="flex justify-between items-center mt-10 mx-44">
           <Link
             to="/ChatPage"
             className="px-8 py-2 mx-32 rounded border border-solid border-purple-500"
@@ -155,11 +182,9 @@ const EditProfile: React.FC = () => {
             Save
           </button>
         </div>
-        </form>
-  </>
-  )
-
+      </form>
+    </>
+  );
 };
-
 
 export default EditProfile;
