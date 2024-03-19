@@ -8,23 +8,39 @@ import Users from "./Users";
 import WelcomeMessageScreen from "./WelcomeMessageScreen";
 
 function MessagePage() {
-  const [b, setb] = useState(true);
-  //   setb('true');
-  // console.log(b);
-  setTimeout(() => {
-    setb(false);
-  }, 2000);
+  const [showChat, setShowChat] = useState(true);
+
+  const handleClick = () => {
+    setShowChat(false);
+
+    const fetchUser = async () => {
+      console.log("dd");
+
+      // const getReceiverId=await axios.get('')
+      // console.log(getUserById);
+    };
+    fetchUser();
+
+    ///////////////////////////-create chat
+
+    //1-sernder id from token
+    //2-reciver id from users in message
+  };
+
   return (
     <>
       <div className="h-screen w-full flex ">
         <div className="w-2/12">
           <Drawer />
         </div>
-        <div className=" w-4/12 flex items-center justify-center gap-10">
+        <div
+          onClick={handleClick}
+          className="cursor-pointer w-4/12 flex items-center justify-center gap-10"
+        >
           <Users />
         </div>
         <div className=" w-6/12 flex items-center justify-center gap-10">
-          {b ? <WelcomeMessageScreen /> : <Chat />}
+          {showChat ? <WelcomeMessageScreen /> : <Chat />}
         </div>
       </div>
     </>
