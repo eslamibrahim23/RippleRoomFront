@@ -6,13 +6,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import { LoginForm } from "./Components/main/LoginForm";
 // import { SignupForm } from "./components/main/SignupForm";
 
-
 import { WavyBackground } from "./Components/ui/wavy--background";
 import ErrorPage from "./Components/main/ErrorPage";
 
 import ChatPage from "./Components/main/chatpage/ChatPage";
 import MessagePage from "./Components/main/chatpage/MessagePage";
-import ChatBoxPage from "./Components/main/chatpage/ChatBoxPage";
+import ChatBoxPage from "./Components/main/chatpage/chatbox/ChatBoxPage";
 import EditProfilePage from "./Components/main/edituser/EditProfilePage";
 
 import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
@@ -55,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     path: "editprofile",
-    element: <EditProfilePage/>,
+    element: <EditProfilePage />,
   },
 ]);
 function App() {

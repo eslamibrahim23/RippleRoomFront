@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-// import defaultAvatar from "../../../assets/images/avatar.png";
 import defaultAvatar from "../../../assets/images/avatar.jpg";
 const ShowProfile = () => {
   const [user, setUser] = useState(null);

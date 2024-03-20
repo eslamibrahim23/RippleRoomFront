@@ -1,30 +1,41 @@
 // import React from 'react'
 
 // import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Drawer from "../Drawer";
-import Chat from "./Chat";
-import Users from "./Users";
+import Chat from "./chatbox/Chat";
+import Users from "./user/Users";
 import WelcomeMessageScreen from "./WelcomeMessageScreen";
+import axios from "axios";
 
 function MessagePage() {
-  const [showChat, setShowChat] = useState(true);
-
-  const handleClick = () => {
-    setShowChat(false);
-
-    const fetchUser = async () => {
-      console.log("dd");
-
-      // const getReceiverId=await axios.get('')
-      // console.log(getUserById);
+  const [user, setUserData] = useState([]);
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      const getAllAsers = await axios.get(
+        "https://rippleroomback.onrender.com/user/users"
+      );
+      setUserData(getAllAsers.data);
     };
-    fetchUser();
+    fetchAllUsers();
+  }, []);
 
-    ///////////////////////////-create chat
+  const senderId = localStorage.getItem("userId");
+  const sender = user.filter((f) => f._id === senderId)[0];
 
-    //1-sernder id from token
-    //2-reciver id from users in message
+  // console.log(sender);
+
+  const [reciever, setReciever] = useState();
+  // const getReciverId = currentUser._id;
+
+  // const [showChat, setShowChat] = useState(true);
+  const handleClick = () => {
+    // setShowChat(false);
+    // console.log(senderId);
+    // console.log(getReciverId);
+    // const fetchUser = async () => {
+    // };
+    // fetchUser();
   };
 
   return (
@@ -37,10 +48,10 @@ function MessagePage() {
           onClick={handleClick}
           className="cursor-pointer w-4/12 flex items-center justify-center gap-10"
         >
-          <Users />
+          <Users user={user} setReciever={setReciever} />
         </div>
-        <div className=" w-6/12 flex items-center justify-center gap-10">
-          {showChat ? <WelcomeMessageScreen /> : <Chat />}
+        <div className=" w-6/12 flex items-center justify-center gap-10 h-full">
+          {reciever ? <Chat reciever={reciever} sender={sender}/> : <WelcomeMessageScreen />}
         </div>
       </div>
     </>

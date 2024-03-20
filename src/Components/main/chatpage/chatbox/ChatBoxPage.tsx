@@ -2,8 +2,8 @@
 
 // import { Link } from "react-router-dom";
 import Chat from "./Chat";
-import Drawer from "../Drawer";
-import Users from "./Users";
+import Drawer from "../../Drawer";
+import Users from "../user/Users";
 
 function ChatBoxPage() {
   return (

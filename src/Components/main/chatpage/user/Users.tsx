@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import UserDetails from "./UserDetails";
-import axios from "axios";
 
-function Users() {
-  const [user, setUserData] = useState([]);
-  useEffect(() => {
-    const fetchAllUsers = async () => {
-      const getAllAsers = await axios.get(
-        "https://rippleroomback.onrender.com/user/users"
-      );
-      console.log(getAllAsers);
+function Users(props) {
+  const { user, setReciever } = props;
 
-      setUserData(getAllAsers.data);
-    };
-    fetchAllUsers();
-  }, []);
-
-
-  // const [search, setSearch] = useState("");
   const [data, setData] = useState({
     search: "",
   });
@@ -32,10 +18,14 @@ function Users() {
     u.userName.toLowerCase().includes(`${data.search.toLowerCase()}`)
   );
 
+  const getDataOfOneUser = (userData) => {
+    setReciever(userData);
+  };
+
   return (
     <>
-      <div className="w-full h-full rounded-e-3xl bg-violet-900 flex flex-col ">
-        <div className="p-5 w-12/12 h-full flex flex-col ">
+      <div className="w-full h-full  bg-slate-300 flex flex-col  ">
+        <div className="p-5 w-12/12 h-full flex flex-col bg-violet-900 rounded-e-3xl ">
           <h1 className="w-12/12 mx-auto text-white text-4xl">Messages</h1>
           <div className="w-11/12 mt-5 mx-auto">
             <input
@@ -53,7 +43,7 @@ function Users() {
             {searched
               ? searched.map((u, i) => {
                   return (
-                    <div key={i}>
+                    <div onClick={() => getDataOfOneUser(u)} key={i}>
                       <UserDetails user={u} />
                     </div>
                   );
