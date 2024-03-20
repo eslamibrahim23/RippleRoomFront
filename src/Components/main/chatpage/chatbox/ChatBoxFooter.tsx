@@ -29,18 +29,17 @@ function ChatBoxFooter(props) {
     setData(newData);
   };
 
+  const navigate = useNavigate();
   const onSubmit = async () => {
     try {
       const response = await axios.post(
         `https://rippleroomback.onrender.com/message/createMessage/${chat._id}`,
         { sender: `${sender._id}`, content: `${data.msg}` }
       );
-      console.log(response);
+      if (response) navigate(0);
     } catch (error) {
       console.error("msg request failed:", error);
     }
-
-    data.msg = "";
   };
   return (
     <>
@@ -60,15 +59,17 @@ function ChatBoxFooter(props) {
                 placeholder="Type your message..."
                 className="flex-grow border-2 border-violet-900 rounded-lg px-4 py-2"
               />
-             {
-              data.msg?( <button
-                onClick={onSubmit}
-                type="submit"
-                className="ml-2 bg-violet-900 text-white px-4 py-2 rounded-lg"
-              >
-                <IoMdSend className="text-[1.7rem] " />
-              </button>): <BsEmojiSmile className="text-[1.7rem] text-violet-900  " />
-             } 
+              {data.msg ? (
+                <button
+                  onClick={onSubmit}
+                  type="submit"
+                  className="ml-2 bg-violet-900 text-white px-4 py-2 rounded-lg"
+                >
+                  <IoMdSend className="text-[1.7rem] " />
+                </button>
+              ) : (
+                <BsEmojiSmile className="text-[1.7rem] text-violet-900  " />
+              )}
             </form>
           </div>
         </div>
