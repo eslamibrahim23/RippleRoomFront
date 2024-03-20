@@ -16,6 +16,7 @@ import axios from "axios";
 
 import { FaMicrophone } from "react-icons/fa";
 import { BsEmojiSmile } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function ChatBoxFooter(props) {
   const { sender, reciver, chat } = props;
