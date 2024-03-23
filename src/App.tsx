@@ -18,6 +18,7 @@ import { TypewriterEffectDemo } from "./Components/main/TypewriterEffectDemo";
 import Profile from "./Components/main/profile/Profile";
 import LoginForm from "./Components/main/LoginForm";
 import SignupForm from "./Components/main/SignupFrom";
+import Logooooooooooooooooooo from "./Components/main/Logooooooooooooooooooo";
 
 // import { GoogleLogin } from "@react-oauth/google";
 // import { jwtDecode } from "jwt-decode";
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
   {
     path: "editprofile",
     element: <EditProfilePage />,
+  },
+  {
+    path: "test",
+    element: <Logooooooooooooooooooo />,
   },
 ]);
 function App() {

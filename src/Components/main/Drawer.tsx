@@ -41,10 +41,7 @@ function Drawer() {
             </div>
           </li>
           <li className="mt-5 mb-60 text-lg font-medium text-violet-900	 ">
-            <div className="px-1  py-1 flex  items-center gap-4 hover:bg-violet-200 rounded-lg">
-              <FaBell className="text-[1.3rem]  text-violet-900	" />
-              <Link to="/ChatPage">Notification</Link>
-            </div>
+         
           </li>
 
           <li className="text-lg font-medium text-violet-900	 ">

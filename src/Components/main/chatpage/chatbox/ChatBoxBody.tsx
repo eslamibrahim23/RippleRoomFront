@@ -28,10 +28,10 @@ function ChatBoxBody(props) {
     <>
       <div className="content h-fixed overflow-auto">
         {allMsg
-          ? allMsg.map((m) => {
+          ? allMsg.map((m,i) => {
               return (
                 <>
-                  <div>
+                  <div key={i} >
                     {(m.sender._id === sender._id )? (
                       <SenderMessageContent msg={m} />
                     ) : (
